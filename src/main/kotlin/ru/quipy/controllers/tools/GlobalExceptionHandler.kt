@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice
 
 @RestControllerAdvice
 class GlobalExceptionHandler {
-
     @ExceptionHandler(IllegalArgumentException::class)
-    fun handleUserAlreadyMemberException(ex: IllegalArgumentException): ResponseEntity<String> {
+    fun handleIllegalArgumentException(ex: IllegalArgumentException): ResponseEntity<String> {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.message)
     }
 }

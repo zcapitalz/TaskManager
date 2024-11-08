@@ -27,7 +27,7 @@ class UserController(
         return userEsService.getState(userId)
     }
 
-    @PutMapping("/{userId}")
+    @PutMapping("/{userId}/nickname")
     fun changeNickname(
             @RequestParam
             userId: UUID,

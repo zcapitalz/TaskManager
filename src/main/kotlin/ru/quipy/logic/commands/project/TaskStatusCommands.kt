@@ -19,7 +19,7 @@ fun ProjectAggregateState.deleteTaskStatus(currentUserId: UUID, taskStatusId: UU
     }
 
     if (tasks.any { t -> t.value.taskStatusId == taskStatusId }) {
-        throw IllegalArgumentException("Cannot delete task status $taskStatusId because there are associated tasks")
+        throw IllegalArgumentException("Cannot delete TaskStatus(id=$taskStatusId) because it is associated with existing task")
     }
 
     return TaskStatusDeletedEvent(taskStatusId, getId())

@@ -40,12 +40,12 @@ class TaskController(
         return projectEsService.update(projectId) { it.assignTask(userId, taskId, assigneeId) }
     }
 
-    @DeleteMapping("/{taskId}/assignees")
+    @DeleteMapping("/{taskId}/assignees/{assigneeId}")
     fun unAssignTask(
         @RequestParam userId: UUID,
         @PathVariable projectId: UUID,
         @PathVariable taskId: UUID,
-        @RequestParam assigneeId: UUID
+        @PathVariable assigneeId: UUID
     ): TaskUnassignedEvent {
         return projectEsService.update(projectId) { it.unAssignTask(userId, taskId, assigneeId) }
     }
