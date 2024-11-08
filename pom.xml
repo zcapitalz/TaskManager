@@ -16,7 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<kotlin.version>1.6.21</kotlin.version>
-		<tiny.es.version>2.7.4</tiny.es.version>
+		<tiny.es.version>2.1.1</tiny.es.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -54,16 +54,26 @@
 
 		<dependency>
 			<groupId>ru.quipy</groupId>
-			<artifactId>tiny-postgres-event-store-spring-boot-starter</artifactId>
+			<artifactId>tiny-mongo-event-store-spring-boot-starter</artifactId>
 			<version>${tiny.es.version}</version>
 		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>ru.quipy</groupId>-->
-<!--			<artifactId>tiny-mongo-event-store-spring-boot-starter</artifactId>-->
-<!--			<version>${tiny.es.version}</version>-->
-<!--		</dependency>-->
-	</dependencies>
+		<dependency>
+			<groupId>at.favre.lib</groupId>
+			<artifactId>bcrypt</artifactId>
+			<version>0.10.2</version>
+		</dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>2.0.1.Final</version>
+        </dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+    </dependencies>
 
 	<build>
 		<sourceDirectory>${project.basedir}/src/main/kotlin</sourceDirectory>
